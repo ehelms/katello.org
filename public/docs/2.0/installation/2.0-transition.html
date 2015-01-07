@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Transitioning from 1.4 to 2.0</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">2.0: Transitioning from 1.4 to 2.0</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="transitioning-from-katello-14-to-20">Transitioning from Katello 1.4 to 2.0</h1>
+
+<h2 id="can-i-do-an-in-place-upgrade">Can I do an in place upgrade?</h2>
+
+<p>Due to the evolution of Katello as a standalone application into a plugin to The Foreman, an upgrade is not feasible.  We regret that instead of an upgrade you will need to transition to a new server.</p>
+
+<h2 id="terminology-changes">Terminology Changes</h2>
+
+<p>The following terminology changes have occured between Katello 1.4 and 2.0:</p>
+
+<ul>
+  <li>Systems are now Content Hosts</li>
+  <li>System Groups are now Host Collections</li>
+  <li>Environments are now Lifecycle Environments</li>
+</ul>
+
+<h2 id="how-do-i-transition">How do I transition?</h2>
+
+<p>The general steps for transitioning are:</p>
+
+<ol>
+  <li>Standup a new server</li>
+  <li>Install Katello 2.0</li>
+  <li>Transition Content</li>
+  <li>Re-create other entities such as Activation Keys and System Groups</li>
+  <li>Transition Systems</li>
+</ol>
+
+<h2 id="installing-a-new-katello-20-server">Installing a new Katello 2.0 Server</h2>
+
+<p>Follow the installation instructions here: <a href="./installation.html">Installation</a></p>
+
+<h2 id="configuration-of-the-katello-20-server">Configuration of the Katello 2.0 Server</h2>
+
+<p>If you are using Red Hat Content you will want to import your Subscription Manifest in the same way as you had done on your previous Katello instance.  You will likely want to create the same set of Lifecycle Environments.</p>
+
+<h2 id="transitioning-content">Transitioning Content</h2>
+
+<h3 id="red-hat-content">Red Hat Content</h3>
+
+<p>For Red Hat repositories that come from your subscription manifest, we recommend to re-enable these and sync them again to the new server.</p>
+
+<h3 id="custom-content">Custom Content</h3>
+
+<p>For custom content you can re-create them with the same upstream url and sync them again.  Alternatively you can sync them from your existing Katello server.  Assuming the custom repo has been published with ‘HTTP’ enabled, set the url of the repository in the Katello 2.0 server to the repository’s url on the Katello 1.4 Server.  It would look something like: <code>http://hostname/pulp/repos/Default_Organization/Library/custom/product_name/repo_name</code></p>
+
+<p>For custom content that was not published via HTTP, it will not be available for the new Katello Server to easily sync.  You can, however, SCP it over to the new server and then manually import it there:</p>
+
+<ol>
+  <li>
+    <p>On the Katello 2.0 server, create a directory to hold each repo:</p>
+
+    <div class="highlight"><pre><code>mkdir -p /repos/my_product/my_repo
+</code></pre></div>
+
+    <p>repeat for each product and repo you want to transfer.  Note that you cannot use /tmp for this as pulp can not sync from /tmp locally.</p>
+  </li>
+  <li>
+    <p>On the Katello 1.4 server, copy over each repo:</p>
+
+    <div class="highlight"><pre><code>scp - r /var/lib/pulp/published/https/repos/ACME_Corporation/Library/custom/my_product/my_repo/      root@KATELLO2.0:/repos/my_product/my_repo
+</code></pre></div>
+
+    <p>Replacing ‘KATELLO2.0’ with the hostname or IP address of your Katello 2.0 server.  Note that each repo path will follow a similar directory path of  /var/lib/pulp/published/https/repos/ORG/Library/custom/PRODUCT/REPO.  Repeat for each Repository you want to copy.</p>
+  </li>
+  <li>On the Katello 2.0 server, ensure the permissions allow apache to read the files: <code>chmod 755 /repos/my_product/my_repo -R</code></li>
+  <li>Create a new Repsoitory on the Katello server with a feed of <code>file:///repos/my_product/my_repo</code></li>
+  <li>Sync the new Repository</li>
+  <li>Change the feed on the new Repository to that of the desired upstream url. This will allow future syncs to pull in content from the upstream Repository.</li>
+</ol>
+
+<h2 id="transitioning-other-items">Transitioning other Items</h2>
+
+<p>Other items such as:</p>
+
+<ul>
+  <li>Users</li>
+  <li>Activation Keys</li>
+  <li>Host Collections (formerly System Groups)</li>
+</ul>
+
+<p>Will all need to be recreated manually through the UI or through the Hammer CLI tool.  We recommend to create things like Activation Keys and Host Collections prior to transitioning your Systems over to make it easier to re-register them.</p>
+
+<h2 id="transitioning-systems">Transitioning Systems</h2>
+
+<p>In order to move systems to the new Katello server you will need to re-register them.  On each system:</p>
+
+<ol>
+  <li>
+    <p>Remove the existing bootstrap rpm:</p>
+
+    <div class="highlight"><pre><code>rpm -e `rpm -qf /etc/rhsm/ca/candlepin-local.pem`
+</code></pre></div>
+  </li>
+  <li>
+    <p>Install the new bootstrap rpm (replacing HOSTNAME with your Katello server’s hostname):</p>
+
+    <div class="highlight"><pre><code>rpm -Uvh http://HOSTNAME/pub/katello-ca-consumer-latest.noarch.rpm
+</code></pre></div>
+  </li>
+  <li>
+    <p>Register:</p>
+
+    <div class="highlight"><pre><code>subscription-manager register --user=admin --password=changme --org=Default_Organization --environment=Library
+</code></pre></div>
+
+    <p>Or you may create an activation key and register with that:</p>
+
+    <div class="highlight"><pre><code>subscription-manager register --org=Default_Organization --activationkey=mykey
+</code></pre></div>
+  </li>
+</ol>
+
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

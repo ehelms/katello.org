@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Puppet Integration</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Puppet Integration</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="managing-puppet-content">Managing Puppet Content</h1>
+
+<h3 id="importing-the-puppet-forge">Importing the Puppet Forge</h3>
+<p>The <a href="https://forge.puppetlabs.com/">Puppet Forge</a> is a collection of puppet modules written by the community which can be used to manage hosts in Katello. These modules can be used in content views as described in the <a href="../content_views/content_views.html#adding-a-puppet-module">content views guide</a> in order to configure the running hosts.</p>
+
+<p>To import the puppet forge navigate to</p>
+
+<p>Content &gt; Products</p>
+
+<p>Click on the <em>+New Product</em> button.</p>
+
+<p>Once the product is created, select the product and click the <em>Create Repository</em><br />
+button. Fill out the repostitory as shown:</p>
+
+<p><img src="puppet_forge.png" alt="Adding a the Pupper Forge" /></p>
+
+<p>This can be done via the CLI:</p>
+
+<div class="highlight"><pre><code>hammer product create
+  --organization "Default Organization"
+  --name Puppet
+
+hammer repository create
+  --organization "Default Organization"
+  --product Puppet
+  --name forge
+  --content-type puppet
+  --url "https://forge.puppetlabs.com/"
+
+</code></pre></div>
+
+<p>The repository can <a href="../content/content.html#syncing-a-repository">now be synced</a>.</p>
+
+<h3 id="importing-puppet-modules-from-git">Importing Puppet Modules from Git</h3>
+
+<p>In order to allow users to import puppet modules from Git repositories, Katello comes with a tool called ‘pulp-puppet-module-builder’ from the pulp-puppet-tools RPM. This utility will be available on the Katello server but it can also be installed on another machine if desired. By running the ‘pulp-puppet-module-builder’ against a Git repository, it will checkout the repository, build all of the modules, and publish them in a structure Katello can synchronize.</p>
+
+<p>The most common method is to run the utility on the Katello server itself and publish to a local file system directory and sync against that directory.</p>
+
+<div class="highlight"><pre><code class="language-bash">mkdir /modules
+chmod <span class="m">755</span> /modules
+pulp-puppet-module-builder --output-dir<span class="o">=</span>/modules --url<span class="o">=</span>git@mygitserver.com:mymodules.git --branch<span class="o">=</span>develop</code></pre></div>
+
+<p>This will checkout the ‘develop’ branch of the Git repository located at ‘git@mygitserver.com:mymodules.git’ and publish them to the <code>/modules</code> directory. Then, from within Katello, simply set the url on your Puppet Repository to ‘file://modules’. You can now sync the Repository just like any other Repository.</p>
+
+<p>If you are running this on a remote machine, you will need to publish the containing to folder to a location accessible by HTTP or HTTPS.</p>
+
+<div class="highlight"><pre><code class="language-bash">mkdir /var/www/html/modules/
+chmod <span class="m">755</span> /var/www/html/modules/
+pulp-puppet-module-builder --output-dir<span class="o">=</span>/var/www/html/modules --url<span class="o">=</span>git@mygitserver.com:mymodules.git --branch<span class="o">=</span>develop</code></pre></div>
+
+<p>Then in Katello, simply enter ‘http://HOSTNAME/modules/’ for the Repository url and sync it like you normally would.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

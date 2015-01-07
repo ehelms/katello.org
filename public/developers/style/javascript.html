@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Style Guide: Javascript</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Style Guide: Javascript</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="javascript-code-conventions">Javascript Code Conventions</h1>
+
+<p>This document contains conventions for programming Javascript that should be followed in an effort<br />
+to increase readability, performance and re-usability.  As builds are run against the
+<a href="http://www.jslint.com/">JSLint Code Quality Tool</a>, an effort should be made to conform to the<br />
+guidelines set forth by JSLint.</p>
+
+<h2 id="general">General</h2>
+<ul>
+  <li>4 spaces (instead of 2), no tabs</li>
+  <li>camelCase for variables</li>
+  <li>CamelCase for classes, and service names</li>
+  <li>Use empty lines to break up logical code chunks</li>
+  <li>Always use <code>===</code> for comparison</li>
+  <li>Place semicolons wherever they are required.  While missing semicolons may not throw an error,<br />
+they can cause unintended behaviors.</li>
+</ul>
+
+<h2 id="javascript-libraries">Javascript Libraries</h2>
+
+<p>A number of Javascript libraries are used within Katello.  Please refer to each libraries documentation.</p>
+
+<ul>
+  <li><a href="http://api.jquery.com/">jQuery</a></li>
+  <li><a href="http://documentcloud.github.com/underscore/">underscorejs</a></li>
+  <li><a href="https://angularjs.org/">AngularJS</a></li>
+</ul>
+
+<h2 id="syntax-conventions">Syntax Conventions</h2>
+
+<p>The following are coding conventions related to Javascript syntax in an effort to enhance<br />
+readability and adhere to the semantics of the language itself.</p>
+
+<h3 id="conditional-statements">Conditional Statements</h3>
+
+<p>Include spaces around the argument of conditionals:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="k">if</span> <span class="p">(</span><span class="nx">condition</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// do something</span>
+<span class="p">}</span></code></pre></div>
+
+<h3 id="variable-declaration">Variable Declaration</h3>
+
+<p>All variable declarations should be placed at the top of a function and a single <code>var</code> statement<br />
+with comma separated variables should follow.</p>
+
+<p>Correct<br />
+```javascript</p>
+
+<p>var add = function (list) {<br />
+    var sum = 0,<br />
+        length = list.length,<br />
+        i;</p>
+
+<div class="highlight"><pre><code>for (i=0; i &lt; length; i += 1) {
+    sum += list[i];
+}
+
+return sum; }; ```
+</code></pre></div>
+
+<p>Incorrect<br />
+```javascript</p>
+
+<p>var add = function (list) {<br />
+    var sum = 0;</p>
+
+<div class="highlight"><pre><code>var length = list.length;
+for (var i=0; i &lt; length; i += 1) {
+    sum += list[i];
+}
+
+return sum; }; ```
+</code></pre></div>
+
+<h3 id="function-declaration-vs-function-expression">Function Declaration vs Function Expression</h3>
+
+<p>Use function expressions instead of function declarations because function expressions are more versatile<br />
+and less prone to unexpected behavior. </p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="c1">// Function Declaration: don&#39;t use this</span>
+<span class="kd">function</span> <span class="nx">add</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">};</span>
+<span class="c1">// Function Expression: use this</span>
+<span class="kd">var</span> <span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">};</span></code></pre></div>
+
+<h3 id="object-iteration">Object Iteration</h3>
+
+<p>When iterating over an object the <code>hasOwnProperty()</code> function should be invoked on each value to<br />
+ensure errant properties attached to the object via the prototype chain do not cause unintended<br />
+behavior.</p>
+
+<p>Correct<br />
+```javascript</p>
+
+<p>var find_product = function (items) {<br />
+    var product,<br />
+        item;</p>
+
+<div class="highlight"><pre><code>for (item in items) {
+    if (items.hasOwnProperty(item)) {
+        if (items[item] === 'product') {
+            product = items[item];
+        }
+    }
+}
+
+return product; }; ```
+</code></pre></div>
+
+<p>Incorrect<br />
+```javascript</p>
+
+<p>var find_product = function (items) {<br />
+    var product,<br />
+        item;</p>
+
+<div class="highlight"><pre><code>for (item in items) {
+    if (items[item] === 'product') {
+        product = items[item];
+    }
+}
+
+return product; }; ```
+</code></pre></div>
+
+<h3 id="array-iteration">Array Iteration</h3>
+
+<p>The <code>for-in</code> loop should never be used to iterate over an array.  Instead, opt to use the<br />
+traditional:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="kd">var</span> <span class="nx">i</span><span class="p">,</span>
+    <span class="nx">length</span> <span class="o">=</span> <span class="nx">list</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">list</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+<span class="p">}</span></code></pre></div>
+<p>### Object Attribute Access</p>
+
+<p>Javascript supports both the dot-operator <code>myobject.foo</code> and index-style <code>myobject["foo"]</code> object<br />
+attribute access.  Always use the dot-operator unless dealing with properties that are dynamic,<br />
+reserved keywords, or <code>snake_case</code> (in order to prevent a JS Hint error).</p>
+
+<h2 id="performance-conventions">Performance Conventions</h2>
+
+<p>These conventions while not directly related to the syntax of the language serve to improve the<br />
+overall performance of any Javascript especially when manipulating the Document Object Model (DOM),<br />
+which is the largest performance bottleneck.</p>
+
+<h3 id="dom-manipulation">DOM Manipulation</h3>
+
+<p>Use <a href="https://docs.angularjs.org/guide/directive">AngularJS directives</a> to handle DOM manipulation.  <br />
+It should be rare to have to manually manipulate the DOM but follow these guidelines if necessary:</p>
+
+<ul>
+  <li>Access the DOM the minimum number of times possible and save DOM elements to local variables</li>
+  <li>Be wary of looping over DOM elements</li>
+  <li>Know what causes browser reflows and avoid doing so unless absolutely necessary</li>
+</ul>
+
+<h2 id="checking-your-code">Checking Your Code</h2>
+
+<p>We use <a href="http://www.jshint.com/">JSHint</a> (a community driven fork of JSLint) to maintain the quality<br />
+of the Javascript code in Katello. For more information about how to run JSHint, see the Linting<br />
+section of our Bastion guide at<br />
+https://github.com/Katello/katello/blob/master/engines/bastion/README.md#linting.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Katello</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <div class="banner">
+    <section class="container">
+      <div class="row">
+        <h1 class="tagline col-md-5">
+          Combine the Power of Content, Configuration, and Provisioning Management
+        </h1>
+        <div class="col-md-5 col-md-offset-2">
+          <p class="foreman-katello-logos">
+            <img src="/assets/images/default-logo.png" alt="Katello"/>
+            <i class="fa fa-plus"></i>
+            <img src="/assets/images/foreman.png" alt="Foreman"/>
+          </p>
+          <a href="/docs/installation/index.html" class="get-started">
+            Get Started
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="container">
+    <div class="row">
+      <div class="col-md-8 info-section">
+        <h1>
+          What is Katello?
+        </h1>
+        <p>
+          Katello brings the full power of content management alongside the provisioning and configuration capabilities of <a href="http://theforeman.org">Foreman.</a>
+        </p>
+
+        <h4>
+          <i class="fa fa-refresh"></i>Local Yum and Puppet Repositories
+        </h4>
+        <p>
+          Create, organize, and manage local yum and puppet repositories.
+          Sync remote repositories or upload content directly to build a library of content that serves as the basis for building custom builds of your content.
+          <a href="/docs/user_guide/content/content.html">Learn More</a>
+        </p>
+
+        <h4>
+          <i class="fa fa-camera"></i>Snapshot Content and Configuration for Reproducible Builds
+        </h4>
+        <p>
+          Take your local content and filter out packages, errata and puppet modules to create custom builds into units called Content Views.
+          Make your custom builds available to your hosts by moving it through environment paths that mimic traditional development workflows (Dev -> QE -> Stage -> Production).
+          <a href="/docs/user_guide/content_views/content_views.html">Learn More</a>
+        </p>
+
+        <h4>
+          <i class="fa fa-warning"></i>Issue Package and Errata Updates
+        </h4>
+        <p>
+          Use your locally managed content to install package and errata updates to a host or group of hosts.              
+          <a href="/docs/user_guide/content_hosts/index.html">Learn More</a>
+        </p>
+
+      </div>
+      <div class="col-md-3 col-md-offset-1 news">
+        <p class="snippet">
+          Katello 2.0 is officially released! Click the 'Get Started' button above to install yours today!
+        </p>
+        <p class="snippet">
+          Katello 2.0 RC1 now available! Click the 'Get Started' button above to learn how to install Katello.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

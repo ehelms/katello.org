@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Troubleshooting</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Troubleshooting</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/debug_certificate.html">Debug Certificate</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/faq.html">FAQ</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/index.html">Troubleshooting</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="troubleshooting">Troubleshooting</h1>
+
+<p>For general support information, see <a href="/community/index.html#support">here</a>.</p>
+
+<h2 id="sub-services-status">Sub-services status</h2>
+
+<p>Katello uses a set of back-end services to perform the actual job. The status of these services can negatively influence the whole system and it’s one of the first things to check when some errors occur.</p>
+
+<p>The status of back-end services can be found either from the Web UI on the <code>/about</code> page:</p>
+
+<p><img src="./backend-systems-status.png" alt="Backend systems status" /></p>
+
+<p>Alternatively, the <code>hammer ping</code> command can be used to get this information.</p>
+
+<p><code>katello-service</code> tool can be used to restart Katello related services. See <code>man katello-service</code> for more details.</p>
+
+<h2 id="logs">Logs</h2>
+
+<p>There are multiple log files with potentially valuable data for debugging. The <code>foreman-debug</code> tool can be used to collect these files for further investigation. See <code>man foreman-debug</code> for more details.</p>
+
+<h2 id="tasks">Tasks</h2>
+
+<p>Katello uses <a href="https://github.com/theforeman/foreman-tasks">Foreman Tasks</a> for orchestration between the underlying services (local database, Pulp, Candlepin…). The tasks are modeled as <a href="https://github.com/Dynflow/dynflow">Dynflow</a> processes. When something goes wrong (and there might be many reasons for this happening), Dynflow gives us the tools to recover from these errors to get to the consistent state.</p>
+
+<h3 id="health-checking">Health checking</h3>
+
+<p>There are two properties used for identifying issues with a task:</p>
+
+<ul>
+  <li><strong>state</strong> - what phase of execution is the task in, possible values are:
+    <ul>
+      <li><strong>planning</strong> - the planning phase of the task is performed: the operations performed in this phase shouldn’t modify anything outside Katello’s database. The execution of this phase happens in the web-process thread and usually should not take more than few seconds</li>
+      <li><strong>planned</strong> - the planning phase finished and the task is waiting for the executor process (<code>foreman-tasks service</code>) to pick it up</li>
+      <li><strong>running</strong> - the executor is performing the orchestration action, modifying the state of external services to converge to the final state</li>
+      <li><strong>paused</strong> - something went wrong during running the task and it’s waiting for the resolution (further details below)</li>
+      <li><strong>stopped</strong> - the execution of the task finished (the success is determined by the <strong>result</strong> value)</li>
+      <li><strong>result</strong> - how the task ended up (or is going to end up if we already know it)</li>
+      <li><strong>pending</strong> - task is in the process of executing</li>
+      <li><strong>success</strong> - no errors occurred during the execution</li>
+      <li><strong>error</strong> - unresolved errors occurred during the execution</li>
+      <li><strong>warning</strong> - there were errors during the execution, but they did not prevent the task from finishing or were skipped manually (further details below).</li>
+    </ul>
+  </li>
+</ul>
+
+<p>To see all the tasks in the system, one can go to <code>/foreman_tasks/tasks</code> page. To see all the tasks that failed, one can search on <code>result = error</code>:</p>
+
+<p><img src="./tasks-result-error.png" alt="Failed tasks" /></p>
+
+<p>Failed tasks include those in the ‘stopped’ or ‘paused’ state. The stopped tasks are already considered as resolved, there is no risk of inconsistency. The tasks in the ‘stopped’ state and the ‘error’ result are usually those failed during the planning phase (usually locking error or bad input data).</p>
+
+<p>To see all the tasks requiring further assistance, filter on <code>state = paused</code>:</p>
+
+<p><img src="./tasks-state-paused.png" alt="Paused tasks" /></p>
+
+<h3 id="dealing-with-paused-task">Dealing with paused task</h3>
+
+<p>Once the paused task is identified, one can investigate the problem causing the errors:</p>
+
+<p><img src="./task-error-details.png" alt="Task error details" /></p>
+
+<p>The resolution of the problem is dependent on the error details. The task may be resolvable by resuming the task: make sure the sub-services are running (see <a href="#sub-services-status">Sub-services status</a> for more details) and then click ‘Resume’ within the web interface.</p>
+
+<p>If this still doesn’t help, one possible step is going to a Dynflow console (the button from task details takes you there):</p>
+
+<p><img src="./dynflow-console.png" alt="Dynflow console" /></p>
+
+<p><strong>Caution: Dynflow console is considered a low-level tool and should be used very carefully, ideally discussing other options before using its features</strong></p>
+
+<p>If the failed task was taken care of by other means (performing the failed steps manually) or it was identified as not critical to the whole task, one can <code>skip</code> the failed step and <code>resume</code> the task to continue. These tasks end up with <code>warning</code> result at the end, to indicate there was some difficulty during the run.</p>
+
+<h3 id="dealing-with-long-running-tasks">Dealing with Long Running Tasks</h3>
+
+<p>In came cases, there might be an issue with sub-services that make it appear as if the task is running for too long without any obvious evidence that something is occurring withing the task.</p>
+
+<p>The first place to look in this case is filtering the tasks on <code>state = running</code> and looking at <code>Running Steps</code> in the task details:</p>
+
+<p><img src="./running-steps.png" alt="Running Steps" /></p>
+
+<p>In this case, the <code>"start_time" =&gt; nil</code> indicates that the task was not picked up by Pulp, which usually means some issues with running the Pulp workers. See (see <a href="#sub-services-status">Sub-services status</a> for more details).</p>
+
+<p>One can also go to the Dynflow console for even more details: the <code>suspended</code> state means that the step is waiting for the external task to finish - the <code>suspended</code> state itself doesn’t have to indicate any error:</p>
+
+<p><img src="./dynflow-suspended-step.png" alt="Dynflow suspended step" /></p>
+
+<p>If you’re sure the underlying services are running fine, depending on the type of task, there might be a possibility to cancel the running step and possibly following <a href="#dealing-with-paused-task">dealing with paused tasks</a> instead.</p>
+
+<h3 id="locking">Locking</h3>
+
+<p>Foreman tasks provides a locking mechanism which is important to prevent the possibility of operations colliding that are being performed concurrently on the same resource (such as synchronizing and deleting a repository at the same time).</p>
+
+<p>When trying to run an operation on a resource that another task is already running, one can get <code>Required lock is already taken by other running tasks.</code>:</p>
+
+<p><img src="./lock-error.png" alt="Lock error" /></p>
+
+<p>A locked resource is one where another task that is related to the same resource is already running. Thus, the task being attempted will result in that task being tried <strong>in running or paused state</strong>. This means that the error is triggered also in cases, where there is a task with unresolved failure (see <a href="#dealing-with-paused-task">dealing with paused tasks</a> for more details).</p>
+
+<p>In rare cases, it might be hard to get into the stopped state. There is a possibility to unlock the resource in the <code>running</code>/<code>paused</code> task. This will switch the task into <code>stopped</code> state, freeing the resources for other tasks.  <strong>Caution: unlocking allows running other tasks to run on potentially inconsistent data, which might lead into further errors</strong>. It’s still possible to go to the Dynflow console and resume the tasks, even after using the unlock feature. There are two unlock-related buttons:
+<code>Unlock</code> and <code>Force Unlock</code>. The only difference between these two is the second one is allowed even when the task is in <code>running</code> state, and therefore is potentially even more dangerous than the <code>Unlock</code> button. See <a href="#dealing-with-tasks-running-too-long">dealing with tasks running too long</a> before attempting to use the <code>Force Unlock</code> option.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

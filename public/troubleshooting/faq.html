@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FAQ</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">FAQ</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/debug_certificate.html">Debug Certificate</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/faq.html">FAQ</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/index.html">Troubleshooting</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<h3 id="how-can-i-sync-a-repository-like-katello-does-directly-from-the-console">How can I sync a repository like Katello does directly from the console?</h3>
+
+<p>Sometimes you want to debug why a synchronization of a repository from Katello is failing and rather than dig through log files and error messages it can often be easier to try to sync the repo with the ‘‘grinder’’ tool which is what Katello uses to download repositories.  The tool can be ran from a terminal on your Katello server:</p>
+
+<div class="highlight"><pre><code>$ grinder yum --label=sync-test --url=http://fedorapeople.org/groups/katello/releases/yum/1.0/RHEL/6Server/x86_64/
+grinder.RepoFetch: INFO     fetchYumRepo() repo_label = sync-test, repo_url = 
+http://fedorapeople.org/groups/katello/releases/yum/1.0/RHEL/6Server/x86_64/, basepath = ./, verify_options = {}
+grinder.RepoFetch: INFO     sync-test, http://fedorapeople.org/groups/katello/releases/yum/1.0/RHEL/6Server/x86_64/, 
+Calling RepoFetch with: cacert=&lt;None&gt;, clicert=&lt;None&gt;, clikey=&lt;None&gt;, proxy_url=&lt;None&gt;, proxy_port=&lt;3128&gt;, proxy_user=&lt;None&gt;, 
+proxy_pass=&lt;NOT_LOGGED&gt;, sslverify=&lt;1&gt;, max_speed=&lt;None&gt;, verify_options=&lt;{}&gt;, filter=&lt;None&gt;
+....
+grinder.ParallelFetch: INFO     5 threads are active. 8 items left to be fetched
+grinder.ParallelFetch: INFO     4 threads are active. 4 items left to be fetched
+grinder.ParallelFetch: INFO     WorkerThread deleting ActiveObject
+grinder.ParallelFetch: INFO     Thread ending
+grinder.ParallelFetch: INFO     3 threads are active. 3 items left to be fetched
+grinder.ParallelFetch: INFO     WorkerThread deleting ActiveObject
+grinder.ParallelFetch: INFO     Thread ending
+</code></pre></div>
+
+<p>You now have a directory called sync-test off of your current working directory:</p>
+
+<div class="highlight"><pre><code>$ ls sync-test/
+converge-ui-devel-0.8.3-1.el6.noarch.rpm
+elasticsearch-0.18.4-13.el6.noarch.rpm
+katello-1.0.6-1.el6.noarch.rpm
+katello-agent-1.0.6-1.el6.noarch.rpm
+katello-all-1.0.6-1.el6.noarch.rpm
+katello-certs-tools-1.1.7-1.el6.noarch.rpm
+lucene3-contrib-3.4.0-2.el6.noarch.rpm
+repodata
+rubygem-actionmailer-3.0.10-3.el6.noarch.rpm
+...
+
+</code></pre></div>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

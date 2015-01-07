@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Activation Keys</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Activation Keys</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="activation-keys">Activation Keys</h1>
+
+<p>Activation Keys provide a mechanism to define properties that may be applied to Content Hosts during registration.  This includes properties such as:</p>
+
+<ul>
+  <li>Lifecycle Environment</li>
+  <li>Content View</li>
+  <li>Subscriptions</li>
+  <li>Repository Enablement</li>
+  <li>Host Collections</li>
+</ul>
+
+<h2 id="definitions">Definitions</h2>
+
+<ul>
+  <li><a href="../content_hosts/index.html#what-are-content-hosts">Content Host</a></li>
+  <li>Host Collection - A statically defined group of Content Hosts.</li>
+  <li>Subscription - The right to receive the associated content from Katello.</li>
+</ul>
+
+<h2 id="general-features">General Features</h2>
+
+<p>The following is a high-level summary of the Activation Key features:</p>
+
+<ul>
+  <li><a href="#create-an-activation-key">Create an Activation Key</a></li>
+  <li><a href="#add-subscriptions-to-an-activation-key">Add subscriptions to an Activation Key</a></li>
+  <li><a href="#change-repository-enablement-for-an-activation-key">Change repository enablement for an Activation Key</a></li>
+  <li><a href="#add-host-collections-to-an-activation-key">Add Host Collections to an Activation Key</a></li>
+  <li><a href="#register-a-content-host-using-an-activation-key">Register a Content Host using an Activation Key</a></li>
+</ul>
+
+<h2 id="create-an-activation-key">Create an Activation Key</h2>
+
+<p>To create a new key,</p>
+
+<ul>
+  <li>navigate to: Content &gt; Activation Keys</li>
+  <li>click <strong>New Activation Key</strong></li>
+</ul>
+
+<p>Note the following option:</p>
+
+<ul>
+  <li><em>Content Host Limit</em>: This option will control how many Content Hosts may be registered using the key.</li>
+</ul>
+
+<p><img src="./activation_key_create.png" alt="Creating a Host Collection" /></p>
+
+<h2 id="add-subscriptions-to-an-activation-key">Add Subscriptions to an Activation Key</h2>
+
+<p>To add subscriptions to a key:</p>
+
+<ul>
+  <li>navigate to: Content &gt; Activation Keys</li>
+  <li>select the desired key from the list</li>
+  <li>click <strong>Subscriptions</strong></li>
+  <li>click <strong>Add</strong></li>
+  <li>select the Subscriptions you would like to add</li>
+  <li>click <strong>Add Selected</strong></li>
+</ul>
+
+<p><img src="./activation_key_add_subscriptions.png" alt="Adding subscriptions to an Activation Key" /></p>
+
+<h2 id="change-repository-enablement-for-an-activation-key">Change Repository Enablement for an Activation Key</h2>
+
+<p>To change repository enablement settings using a key:</p>
+
+<ul>
+  <li>navigate to: Content &gt; Activation Keys</li>
+  <li>select the desired key from the list</li>
+  <li>click <strong>Product Content</strong></li>
+  <li>click the edit icon for the repository content set that you would like to modify</li>
+  <li>select the desired value (e.g. ‘Override to Yes’, ‘Override to No’, ‘Defaults to Yes’, ‘Defaults to No’)</li>
+  <li>click <strong>Save</strong></li>
+</ul>
+
+<p>View current settings:
+<img src="./activation_key_product_content.png" alt="Activation key product content" /></p>
+
+<p>Change current settings:
+<img src="./activation_key_product_content_change.png" alt="Activation key product content update" /></p>
+
+<h2 id="add-host-collections-to-an-activation-key">Add Host Collections to an Activation Key</h2>
+
+<p>To add Host Collections to a key:</p>
+
+<ul>
+  <li>navigate to: Content &gt; Activation Keys</li>
+  <li>select the desired key from the list</li>
+  <li>click <strong>Host Collections</strong></li>
+  <li>click <strong>Add</strong></li>
+  <li>select the Host Collections you would like to add</li>
+  <li>click <strong>Add Selected</strong></li>
+</ul>
+
+<p><img src="./activation_key_add_host_collections.png" alt="Adding Host Collections to an Activation Key" /></p>
+
+<h2 id="register-a-content-host-using-an-activation-key">Register a Content Host using an Activation Key</h2>
+
+<p><a href="../content_hosts/index.html#how-is-a-content-host-registered">Click here for more information</a></p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

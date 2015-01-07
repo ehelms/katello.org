@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Provisioning</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">2.0: Provisioning</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.0/cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.0/user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="provisioning">Provisioning</h1>
+
+<p>See <a href="http://theforeman.org/manuals/latest/index.html#4.4Provisioning">the Foreman manual</a> for general information on configuring provisioning.</p>
+
+<h2 id="templates">Templates</h2>
+
+<p>Katello ships a number of templates in addition to the standard Foreman ones. When using these templates, if a host has a Host group with an <a href="../activation_keys/index.html">Activation Key</a>, it will register as a Content Host automatically.</p>
+
+<ul>
+  <li><strong>Katello Kickstart Default</strong> - Kickstart template for Fedora, CentOS, RHEL, and other Red Hat-compatible operating systems.</li>
+  <li><strong>Katello Kickstart Default Finish</strong> - image-based provisioning</li>
+  <li><strong>Katello Kickstart Default User Data</strong> - cloud-init template for EC2 and OpenStack</li>
+  <li><strong>subscription_manager_registration</strong> - Snippet for registering a host for content</li>
+</ul>
+
+<p>To customize any of the above templates, simply clone them and add your changes.</p>
+
+<p>When you synchronize a repository with a distribution such as Fedora or CentOS, Katello will automatically create the operating system and assign these default templates.  You may change the defaults by going to Administer / Setttings, and selecting the Katello tab.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

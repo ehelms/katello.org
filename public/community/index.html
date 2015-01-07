@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Community</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Community</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/community/index.html#support">Support</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/community/index.html#contribute">Contribute</a>
+    </li>
+  </ul>
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="community">Community</h1>
+
+<h2 id="support">Support</h2>
+
+<p>To get appropriate support, you need to provide sufficient information about your operating system, environment and setup. You can utilize the foreman-debug tool which collects information about your OS, Foreman, Katello, and related components. If you installed from packages, the command is available to root:</p>
+
+<div class="highlight"><pre><code># foreman-debug
+</code></pre></div>
+
+<p>If you installed from git, you can find it in the Foreman directory:</p>
+
+<div class="highlight"><pre><code># script/foreman-debug
+</code></pre></div>
+
+<p>If you run it without any options, it will collect data, filter out possible passwords or tokens and create a tarball which can be safely handed over to us. We reccomend to attach this to any bug report you file.</p>
+
+<h3 id="foreman">Foreman</h3>
+
+<p>For Foreman-specific issues, consult the <a href="http://theforeman.org/support.html">Support</a> and <a href="http://theforeman.org/manuals/latest/index.html">Manual</a> pages on <a href="http://theforeman.org">theforeman.org</a>.</p>
+
+<h3 id="issue-tracker">Issue Tracker</h3>
+<p>We use Redmine to report and track bugs and feature requests, which can be found here: <a href="http://projects.theforeman.org/projects/katello/issues">http://projects.theforeman.org/projects/katello/issues</a></p>
+
+<h3 id="irc">IRC</h3>
+<p>You can find us on the Foreman IRC channel, #theforeman, on <a href="http://webchat.freenode.net/">irc.freenode.net</a>. For development discussions, there is also #theforeman-dev.</p>
+
+<h3 id="mailing-lists">Mailing Lists</h3>
+<p>We use the same mailing lists as Foreman, which are available via Google Groups. Much like IRC, we have a general users (support, Q/A, etc) lists and a development list.  For Katello-specific issues, it’s best to prefix the subject with <code>[katello]</code> to get our attention.</p>
+
+<ul>
+  <li><a href="https://groups.google.com/forum/?fromgroups#!forum/foreman-users">foreman-users</a> or email <code>foreman-users+subscribe@googlegroups.com</code></li>
+  <li><a href="https://groups.google.com/forum/?fromgroups#!forum/foreman-dev">foreman-dev</a> or email <code>foreman-dev+subscribe@googlegroups.com</code></li>
+</ul>
+
+<p>There is also a low-traffic list dedicated to release and security announcements:</p>
+
+<ul>
+  <li><a href="https://groups.google.com/forum/?fromgroups#!forum/foreman-announce">foreman-announce</a> or email <code>foreman-announce+subscribe@googlegroups.com</code></li>
+</ul>
+
+<h2 id="contribute">Contribute</h2>
+
+<h2 id="code">Code</h2>
+
+<p>Please see the <a href="/docs/developer_guide/github_workflow.html">Developer Guide</a> for learning how to setup a development environment, testing, and submitting a pull request to GitHub.</p>
+
+<h2 id="other">Other</h2>
+
+<h3 id="user-support">User Support</h3>
+
+<p>Helping out other users on IRC and the mailing lists is always useful. Frequent problems or questions should be brought up so the wiki can be updated to help future users.</p>
+
+<h3 id="translations">Translations</h3>
+
+<p>The Foreman application and Katello have been translated into a number of languages, which require regular updates as strings are added and changed in each release.  We’re also on the lookout for new translations if you speak a language that Foreman isn’t yet available for.  Join in the effort on <a href="https://www.transifex.com/projects/p/katello/">the Katello</a> and <a href="https://www.transifex.com/projects/p/foreman/">Foreman</a> Transifex projects.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

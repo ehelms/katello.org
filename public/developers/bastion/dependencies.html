@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bastion: Dependencies</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Bastion: Dependencies</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="dependencies">Dependencies</h1>
+
+<p>Web asset dependencies are stored in <code>bower.json</code>. This file denotes what library files are being used and their versions.</p>
+
+<h2 id="installing-a-new-dependency">Installing a New Dependency</h2>
+
+<p>In order to add a new web asset dependency, a new entry into the <code>bower.json</code> file must be made along with noting what file(s) to extract from the new package to be placed into source control. For example, to add the <code>angular-blocks</code> library, open <code>bower.json</code> and add an entry under the <code>dependencies</code> section:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="s2">&quot;angular-blocks&quot;</span><span class="o">:</span> <span class="s2">&quot;~&gt;0.1.8&quot;</span></code></pre></div>
+
+<p>Since Bower is based off the use of a git repository to define the package contents, installing <code>angular-blocks</code> will pull down more files than we want. In order to limit the files places into source control, add an entry to the <code>exportsOverride</code> section like so:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="s2">&quot;angular-blocks&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;javascripts/bastion&quot;</span><span class="o">:</span> <span class="s2">&quot;src/angular-blocks.js&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>If needing to extract multiple asset types, one can do:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="s2">&quot;alchemy&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;javascripts/bastion&quot;</span><span class="o">:</span> <span class="s2">&quot;alchemy.js&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;stylesheets/bastion&quot;</span><span class="o">:</span> <span class="s2">&quot;*.scss&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>A set of files can be included by using an array instead of a string to list the files. After defining the new dependency and the associated file(s), run the following to install the new library:</p>
+
+<div class="highlight"><pre><code>grunt bower:update
+</code></pre></div>
+
+<h2 id="updating-a-dependency">Updating a Dependency</h2>
+
+<p>To update a dependency, the version must be bumped in the <code>bower.json</code> file, installed and committed to source control. To bump the version, open <code>bower.json</code>, locate the proper entry and change the version number. Now, install the new version:</p>
+
+<div class="highlight"><pre><code class="language-bash">grunt bower:update</code></pre></div>
+
+<p>Lastly, double check the new files with something like <code>git status</code>, add them and commit them with a message indicating that a new dependency version is being committed. We prefer that when committing a new depenendency, a single commit is generated with just the changes from the update.</p>
+
+<h2 id="example-dependency-errors">Example Dependency Errors</h2>
+
+<p><a href="#fixing-dependency-errors">See <em>Fixing Dependency Errors</em></a> for more commands to help fix errors such as these:</p>
+
+<p><strong>Error 1: local Npm module not installed</strong></p>
+
+<p><code>Local Npm module "grunt-angular-gettext" not found. Is it installed?</code></p>
+
+<p>Running <code>npm install</code> and <code>grunt bower:dev</code> again should fix the issue.</p>
+
+<p><strong>Error 2: the unmet dependency</strong></p>
+
+<p><em>Traceback abbreviated to highlight error</em></p>
+
+<div class="highlight"><pre><code>npm WARN unmet dependency /usr/lib/node_modules/block-stream requires inherits@'~2.0.0' but will load
+npm WARN unmet dependency undefined
+</code></pre></div>
+
+<p>Running <code>sudo npm update -g phantomjs bower grunt-cli</code> should fix the issue.</p>
+
+<h3 id="fixing-dependency-errors">Fixing Dependency Errors</h3>
+
+<p><a href="#example-dependency-errors">See <em>Example Dependency Errors</em></a> to see common errors and their fixes.</p>
+
+<p>Over time libraries, packages, and/or dependencies are often updated or added so you may have to rerun one or more<br />
+of the following commands to fix them:</p>
+
+<p><strong>Note</strong>: You only need to run <code>grunt bower update</code> when updating or pulling in changes to <code>bower.json</code> where the<br />
+version of a component has been bumped.</p>
+
+<p><a href="#installing-a-new-dependency">See also <em>Installing a New Dependency</em></a> as well as the related section
+<a href="#updating-a-new-dependency"><em>Updating a New Dependency</em></a></p>
+
+<ul>
+  <li><code>sudo npm update -g phantomjs bower grunt-cli</code></li>
+  <li><code>npm install</code></li>
+  <li><code>grunt bower:dev</code></li>
+</ul>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

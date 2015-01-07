@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Style Guide: Commit Messages</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Style Guide: Commit Messages</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="git-commit-messages">Git Commit Messages</h1>
+
+<p>For Katello, we ask that git commit messages are properly formatted and that they reference an issue<br />
+in Redmine. If your change also involves a Bugzilla issue, you must include the Bugzilla number as<br />
+well (see the <a href="TODO">Bugzilla section</a>).</p>
+
+<h3 id="format">Format</h3>
+
+<p>Git commit messages should give a brief overview of the problem or feature along with a short<br />
+description of what was implemented to fix the bug or feature. Well formatted git commit messages<br />
+have two components: a short message and a long message or description.  The short message ought to<br />
+be limited to 70 characters while the long message should be wrapped at 74 or so characters.  See<br />
+below for an example. Also, you can read <a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Tim Pope’s article about git message<br />
+formatting</a>.</p>
+
+<h3 id="redmine">Redmine</h3>
+
+<p>Each git commit message should contain a reference to the Redmine issue at the beginning of the<br />
+commit message. There are two way to do this. The first will simply attach the commit to the Redmine<br />
+issues:</p>
+
+<div class="highlight"><pre><code>Refs #123 - Improve performance of content views
+</code></pre></div>
+
+<p>The second type will actually close out the issue once the PR containing the commit gets merged:</p>
+
+<div class="highlight"><pre><code>Fixes #123 - Fix content view publish bug
+</code></pre></div>
+
+<h3 id="bugzilla">Bugzilla</h3>
+
+<p>If you issue also involves a Bugzilla bug, add the Bugzilla number prefixed by <code>BZ</code> to your commit’s<br />
+short message. For example:</p>
+
+<div class="highlight"><pre><code>Fixes #1234  - Fixes issue with foo bar BZ888342
+</code></pre></div>
+
+<h2 id="example">Example</h2>
+
+<p>Below is an example of how a git commit message ought to look like:</p>
+
+<div class="highlight"><pre><code>Fixes #1234 - Fix content view yum publish bug
+
+Fix a problem where content views were not being published if they
+contained yum repositories. The repositories were not being referenced
+correctly. To fix this, I changed the repository look up method to go to
+ElasticSearch and find the attached repos.
+
+This fix also addresses a problem with promoting that was also caused by
+this bug. Promoting also has another bug though that needs to be fixed
+before it works correctly.
+</code></pre></div>
+
+<h2 id="multi-issue-example">Multi issue example</h2>
+
+<p>Below is an example of a pull request fixing multiple issues (pull requests should only fix a single issue in most cases)</p>
+
+<div class="highlight"><pre><code>Fixes #1234,#5678 - Fix content view yum publish bug
+
+Fix a problem where content views were not being published if they
+contained yum repositories. The repositories were not being referenced
+correctly. To fix this, I changed the repository look up method to go to
+ElasticSearch and find the attached repos.
+</code></pre></div>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

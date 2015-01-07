@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Debug Certificate</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Debug Certificate</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/debug_certificate.html">Debug Certificate</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/faq.html">FAQ</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <ul>
+          <li class="nav-item">
+            <a href="/troubleshooting/index.html">Troubleshooting</a>
+          </li>
+        </ul>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="debug-certificate">Debug Certificate</h1>
+
+<p>Debug certificates (also called Ueber Certificates) can be used to unlock all the content for a given Organization. These are meant to be used by sysadmins who are debugging issues with the Katello install.</p>
+
+<h2 id="generating-a-debug-certificate">Generating a Debug Certificate</h2>
+
+<p>To generate a debug certificate for a given Organization from the UI, navigate to the organizations page and click on the organization for which you want a debug certificate. Click on the button to generate and download the certificate as highlighted below:</p>
+
+<p><img src="./debug_certificate.png" alt="Generate Debug Certificate" /></p>
+
+<p>To generate a debug certificate using the API, see <a href="http://www.katello.org/docs/api/apidoc/organizations.html#description-download_debug_certificate">Debug Certificate API</a>.</p>
+
+<p>In either case, you will get the Private Key and Certificate returned to you in a format such as :</p>
+
+<div class="highlight"><pre><code>Key:  -----BEGIN RSA PRIVATE KEY-----
+&lt;&lt;&lt;&lt;DER ENCODED TEXT&gt;&gt;&gt;&gt;
+-----END RSA PRIVATE KEY-----
+
+Cert: -----BEGIN CERTIFICATE-----
+&lt;&lt;&lt;&lt;DER ENCODED TEXT&gt;&gt;&gt;&gt;
+-----END CERTIFICATE-----
+</code></pre></div>
+
+<h2 id="using-firefox-to-browse-content">Using Firefox to browse content</h2>
+
+<p>If you wish to use the certificate to browse content via Firefox, do the following:</p>
+
+<ol>
+  <li>Copy the output of the above command from } to } inclusive to a file called key.pem</li>
+  <li>Copy the output of the above command from } to } inclusive to a file called cert.pem</li>
+  <li>Run the following command to create a pkcs12 file:
+<code>
+openssl pkcs12 -keypbe PBE-SHA1-3DES -certpbe PBE-SHA1-3DES -export -in cert.pem -inkey key.pem -out [NAME].pfx -name [NAME]
+</code></li>
+  <li>Provide a password when prompted.</li>
+  <li>Using the preferences tab, import the resulting pfx file into your browser (Edit-&gt;Preferences-&gt;Advanced Tab -&gt; View Certificates -&gt; Import)</li>
+  <li>On the Katello server, edit the /etc/httpd/conf.d/pulp.conf file. Add the following line in the } Stanza:
+<code>
+Options +Indexes
+</code></li>
+  <li>Restart Apache on the server.</li>
+  <li>Point your browser at http://[FQDN]/pulp/repos/[ORG_NAME]</li>
+</ol>
+
+<p>To use curl to access the repository, you can provide –cert and –key options. Provided the cert is in } and key in }, the following command will let you access any repository data in the organization. To check the access to a repository, checking the availability of repodata/repomd.xml is usually a good idea (make sure key.pem and cert.pem are ‘'’absolute paths’’’ otherwise it silently fails):</p>
+
+<div class="highlight"><pre><code>curl -k --cert ~/cert.pem --key ~/key.pem https://katello.example.com/pulp/repos/test/Dev/custom/zoo/base-two/repodata/repomd.xml
+</code></pre></div>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

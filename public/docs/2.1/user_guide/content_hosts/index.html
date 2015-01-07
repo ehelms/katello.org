@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Content Hosts</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">2.1: Content Hosts</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.1/installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.1/release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.1/api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs/2.1/cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs/2.1/user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="content-hosts">Content Hosts</h1>
+
+<h2 id="what-is-a-host">What is a Host?</h2>
+
+<p>A Host is a Foreman concept that represents a server/host/system/computer (whatever you want to call it).  In addition to holding facts about the system, it:</p>
+
+<ul>
+  <li>Stores which operating system the system should be running</li>
+  <li>Stores which puppet classes should be assigned</li>
+  <li>Stores which parameters apply to which puppet classes</li>
+  <li>Allows you to re-provision the machine</li>
+</ul>
+
+<h2 id="what-are-content-hosts">What are Content Hosts?</h2>
+
+<p>Content Hosts are the part of a host that manages Content and Subscription related tasks.<br />
+As time goes on more and more of this functionality will be moved to the Host object.  A Host’s Content Host:</p>
+
+<ul>
+  <li>Stores which Products are assigned (i.e. which Repositories will the system pull content from)</li>
+  <li>Initiates package install/upgrade/removal</li>
+  <li>Determines which errata apply to a system</li>
+  <li>Initiates errata installation</li>
+</ul>
+
+<h2 id="how-is-a-content-host-registered">How is a Content Host registered?</h2>
+
+<p>Subscription Manager is the client for Katello that handles registration.</p>
+
+<h3 id="installing-subscription-manager">Installing Subscription Manager</h3>
+<p>Depending on your Operating System, for:</p>
+
+<ul>
+  <li>RHEL, subscription-manager is installed by default</li>
+  <li>Fedora, subscription-manager is available from the Everything repo for its release: <code>yum install subscription-manager</code></li>
+  <li>CentOS, enable the upstream subscription-manager repo and then install subscription-manager:</li>
+</ul>
+
+<div class="highlight"><pre><code>cat &gt; /etc/yum.repos.d/sub-man.repo &lt;&lt; EOF
+[subscription-manager]
+name=An open source entitlement management system.
+baseurl=http://repos.fedorapeople.org/repos/candlepin/subscription-manager/epel-6/x86_64/
+enabled=1
+gpgcheck=0
+EOF
+
+yum install subscription-manager -y
+</code></pre></div>
+
+<h3 id="registering-with-subscription-manager">Registering with Subscription Manager</h3>
+
+<p>First install the bootstrap rpm from your Katello server:</p>
+
+<div class="highlight"><pre><code>rpm -Uvh http://$KATELLO_HOSTNAME/pub/katello-ca-consumer-latest.noarch.rpm
+</code></pre></div>
+
+<p>Then register:</p>
+
+<div class="highlight"><pre><code>subscription-manager register --org=Default_Organization --environment=Library
+</code></pre></div>
+
+<p>Subscription manager will prompt for your username and password.  You can also specify <code>--username $USER --password $PASS</code> on the command line.</p>
+
+<h3 id="registering-to-a-content-view">Registering to a Content View</h3>
+
+<p>To register to Content View “MyView” in a “Devel” Lifecycle Environment:</p>
+
+<div class="highlight"><pre><code>subscription-manager register --org=Default_Organization --environment=Devel/MyView
+</code></pre></div>
+
+<h3 id="registering-without-using-a-username-and-password">Registering without using a username and password</h3>
+
+<p>Activation Keys allow you to register and consume content without using a username and password.  To create an Activation Key see the <a href="../activation_keys/index.html">Activation Key Guide</a></p>
+
+<p>Once you have created an activation key, register with:</p>
+
+<div class="highlight"><pre><code>subscription-manager register --org=Default_Organization --activationkey=$KEY_NAME
+</code></pre></div>
+
+<h1 id="actions-with-registered-content-hosts">Actions with registered Content Hosts</h1>
+
+<p>To see the list of your Content Hosts, navigate to Hosts &gt; Content Hosts</p>
+
+<p><img src="./list.png" alt="Content Host List" /></p>
+
+<h2 id="changing-the-lifecycle-environment-and-content-view-of-a-content-host">Changing the Lifecycle Environment and Content View of a Content Host:</h2>
+
+<p>Navigate to the Content Host Details page,  Host &gt; Content Hosts &gt; Click the name of the desired Content Host</p>
+
+<p><img src="./details.png" alt="Content Host Details" /></p>
+
+<p>Look in the upper right corner for the “Content Host Content”:</p>
+
+<p><img src="./content_host_content.png" alt="Content Host Content" /></p>
+
+<p>Then select the new Lifecycle Environment you desire, select the new Content View you desire, and click save.</p>
+
+<h2 id="assigning-a-content-host-to-a-product">Assigning a Content Host to a Product</h2>
+
+<p>In order for a Content Host to receive package updates and access Repositories hosted on Katello, it needs to be subscribed to a product.</p>
+
+<p>Navigate to  Hosts &gt; Content Hosts &gt; Select Content Host &gt; Subscriptions &gt; Click the “Add” tab</p>
+
+<p><img src="./subscriptions.png" alt="Subscriptions" /></p>
+
+<p>Check the checkbox under the Products you want to add and select “Add Selected” in the upper right.</p>
+
+<p>To see existing attached Products, click the “List/Remove” tab.  To remove a Product, select the checkbox under the desired Product in this list and click “Remove Selected”.</p>
+
+<h2 id="package-management">Package Management</h2>
+
+<p>To perform package actions on a singleContent Host, navigate to: Hosts &gt; Content Hosts &gt; Select Content Host &gt; Packages</p>
+
+<p><img src="./packages.png" alt="Package Management" /></p>
+
+<p>From here you can:</p>
+
+<ul>
+  <li>See a list of installed packages</li>
+  <li>Perform a yum install/update/remove of a Package or Package Group</li>
+  <li>Update all packages (equivalent of running ‘yum update’)</li>
+</ul>
+
+<h2 id="view-and-install-applicable-errata">View and Install Applicable Errata</h2>
+
+<p>If your synced Repositories contain Errata, you can use Katello’s Errata management to track and install Errata.</p>
+
+<p>Navigate to:   Hosts &gt; Content Hosts &gt; Select Content Host &gt; Errata</p>
+
+<p><img src="./errata.png" alt="Package Management" /></p>
+
+<p>To apply errata, search for the errata you want and select the checkbox beside each errata.  Then click “Apply Selected” at the top right.</p>
+
+<h2 id="change-host-collection-asssignments">Change Host Collection Asssignments</h2>
+
+<p>To change Host Collection assignments for a Content Host, navigate to: Hosts &gt; Content Hosts &gt; Select Content Host &gt; Host Collections</p>
+
+<p><img src="./host_collections.png" alt="Host Collections" /></p>
+
+<h2 id="bulk-actions">Bulk Actions</h2>
+
+<p>Katello provides the ability to perform actions on many Content Hosts at once such as:</p>
+
+<ul>
+  <li>Package installation/upgrade/removal</li>
+  <li>Listing and applying applicable errata</li>
+  <li>Assigning Host Collections</li>
+  <li>Changing Lifecycle Environment and Content View assignments</li>
+</ul>
+
+<p>In order to use the bulk actions, perform whatever search you desire and select which Content Hosts you want to modify.  If you want to select all Content Hosts from a search result, click the ‘checkbox’ above the table:</p>
+
+<p><img src="./select_all_check.png" alt="Host Collections" /></p>
+
+<p>This will select all Content Hosts on that page (only the ones that are visible).  To select all that correspond to that search query, notice a bar has now appeared:</p>
+
+<p><img src="./select_all_results.png" alt="Host Collections" /></p>
+
+<p>Next select the ‘Bulk Actions’ button in the top right.</p>
+
+<p>From here you can select the tab corresponding to any action you wish to perform.</p>
+
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

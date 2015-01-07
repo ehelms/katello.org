@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Content Views</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Content Views</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="content-views">Content Views</h1>
+
+<p>What can a Content View be used for?</p>
+
+<ul>
+  <li>To stage content through environments (Dev, Test, Production).</li>
+  <li>To filter the contents of a repository (include a package or exclude certain errata, for example).</li>
+  <li>To have multiple snapshots of the same repository and/or puppet modules.</li>
+</ul>
+
+<h2 id="definitions">Definitions</h2>
+
+<ul>
+  <li>Content View - snapshot of one or more repositories and/or puppet modules.</li>
+  <li>Composite Content View - a Content View that contains a collection of other Content Views.</li>
+  <li>Filter - provides finer grained control over content in a Content View.  Can be used to include or exclude specific packages, package groups, or errata.</li>
+  <li>Publishing - Content Views are ‘published’ in order to lock their contents in place.  The content of the Content View is cloned and all filters applied.  Publishing creates a new version of the Content View.</li>
+  <li>Promoting - Content Views can be cloned to different <a href="../lifecycle_environments/environment.html">Lifecycle Environments</a> (Dev, Test, Production).</li>
+</ul>
+
+<h2 id="general-workflow">General Workflow</h2>
+
+<p>First <a href="../content/content.html#creating-a-product">create a product and repository</a> in the library environment and populate the repository with content (by syncing it or uploading content).<br />
+A <a href="../content_hosts/index.html">Content Host</a> can now register directly to library and be attached to the content therein.  Updates will be available as soon as new content is synced or uploaded.</p>
+
+<p>To utilize Content Views for filtering and snapshoting:</p>
+
+<ol>
+  <li>Create a Content View</li>
+  <li>Add the desired repository and/or puppet modules to the Content View</li>
+  <li>Optionally create one or more Filters to fine tune the content of the Content View.</li>
+  <li>Publish the Content View</li>
+  <li>Attach the Content Host to the Content View</li>
+  <li>Optionally promote the Content View to another environment</li>
+</ol>
+
+<p>At this point the Content Host will no longer be getting content directly from Library, but from the Content View. Updates to library will not affect this Content Host.</p>
+
+<p>Note that all of the actions below can also done with <a href="../../cli/index.html">hammer, the CLI tool</a>, and examples are given at the end of each section.</p>
+
+<h2 id="creating-a-content-view">Creating a Content View</h2>
+
+<p>To create a Content View using the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views</p>
+
+<p>Click the <em>Create New View</em> button on the top right of the screen.</p>
+
+<p><img src="new_content_view.png" alt="Creating a new Content View" /></p>
+
+<p>From the CLI:</p>
+
+<div class="highlight"><pre><code>hammer content-view create \
+  --organization="Default Organization" \
+  --name="New Content View" \
+  --description="This is my new content view."
+</code></pre></div>
+
+<h2 id="creating-a-composite-content-view">Creating a Composite Content View</h2>
+
+<p>To create a Composite Content View using the web UI follow the above steps for <a href="">Creating a Content View</a> but check the “Composite View?” checkbox.</p>
+
+<p>From the CLI:</p>
+
+<div class="highlight"><pre><code>hammer content-view create \
+  --organization="Default Organization" \
+  --name="New Composite Content View" \
+  --description="This is my new composite content view." \
+  --composite
+</code></pre></div>
+
+<h2 id="adding-repositories">Adding Repositories</h2>
+
+<p>Adding a repository to a Content View means whenever a Content View is published, all of the content contained within the repository at that time is included in the Content View.<br />
+If the <a href="../content/content.html#syncing-a-repository">repository is synced</a> after publishing the Content View, the Content View will contain the state of the repository prior to syncing.<br />
+A new version of the Content View must be published in order for the new version to get the contents of the newly synced repository.</p>
+
+<p>To add a repository using the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Content (within sub navigation) &gt; Repositories</p>
+
+<p><img src="add_repositories.png" alt="Adding a repository to a Content View" /></p>
+
+<p>From the CLI, adding a repository:</p>
+
+<div class="highlight"><pre><code>hammer content-view add-repository \
+  --organization="Default Organization"
+  --name="New Content View" \
+  --repository="CentOS 6.5"
+</code></pre></div>
+
+<h2 id="adding-a-puppet-module">Adding a Puppet Module</h2>
+
+<p>Adding a puppet module to a Content View means that whenever the Content View is published the puppet module is locked to the version selected.<br />
+If the “Use Latest” version is selected then the puppet module will be “frozen” at the latest version available when the Content View is published.<br />
+A new version of the Content View must be published in order for the new version to get any updated puppet module.</p>
+
+<p>To add a puppet module using the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Puppet Modules (within sub navigation)</p>
+
+<p><img src="add_puppet_module1.png" alt="Adding a puppet module to a Content View" />
+<img src="add_puppet_module2.png" alt="Adding a puppet module to a Content View 2" />
+<img src="add_puppet_module3.png" alt="Adding a puppet module to a Content View 3" />
+<img src="add_puppet_module4.png" alt="Adding a puppet module to a Content View 4" /></p>
+
+<p>From the CLI, first find the UUID of your puppet module from the list:</p>
+
+<div class="highlight"><pre><code>hammer puppet-module list \
+  --organization="Default Organization" \
+  --repository "Puppet Modules"
+</code></pre></div>
+
+<p>Then add the puppet module:</p>
+
+<div class="highlight"><pre><code>hammer content-view puppet-module add \
+  --organization="Default Organization" \
+  --content-view="New Content View" \
+  --uuid=91cc9bb7-dbb3-4798-b50a-45173b763cbb
+</code></pre></div>
+
+<h2 id="adding-content-views-to-a-composite-content-view">Adding Content Views to a Composite Content View</h2>
+
+<p>Adding a version of a Content View to a Composite Content View means whenever the Composite Content View is published, all of the content contained within the specific version of that Content View is contained in the Composite Content View.<br />
+If the Content Views contained within the Composite Content View are updated (i.e. a new version is published) or if their content is updated after publishing the Composite Content View, the Composite Content View will only contain the versions of the Content View(s) prior to syncing.<br />
+A new version of the Composite Content View must be published in order for it to get the updated Content Views.</p>
+
+<p>To add a Content View to a Composite Content View using the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Content (within sub navigation) &gt; Repositories</p>
+
+<p><img src="add_composite_content_view.png" alt="Adding a Content View to a composite Content View 4" /></p>
+
+<p>Find the Content View ID of the specific version of the Content View to add:</p>
+
+<div class="highlight"><pre><code>hammer content-view version list \
+  --organization="Default Organization" \
+  --content-view="New Content View"
+</code></pre></div>
+
+<p>From the CLI, add a Content View to a composite Content View:</p>
+
+<div class="highlight"><pre><code>hammer content-view update \
+  --organization="Default Organization" \
+  --content-view="New Composite Content View" \
+  --component-ids=2
+</code></pre></div>
+
+<h2 id="creating-a-filter">Creating a filter</h2>
+
+<p>If only using Content Views as snapshots, Filters are unnecessary.  If the desire is to filter what content make it into the view, such as blacklisting a package by name or version, or blacklisting errata by date or type, Filters can help accomplish these tasks.</p>
+
+<p>To create a new Content View Filter using the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Content (within sub navigation) &gt; Filters &gt; New Filter</p>
+
+<p><img src="new_filter1.png" alt="Adding a Filter to a Content View" />
+<img src="new_filter2.png" alt="Adding a Filter to a Content View" />
+<img src="new_filter3.png" alt="Adding a Filter to a Content View" /></p>
+
+<p>From the CLI, adding a Content View Filter:</p>
+
+<div class="highlight"><pre><code>hammer content-view filter create \
+  --organization="Default Organization" \
+  --content-view="New Content View" \
+  --name="New Filter" \
+  --inclusion=false \
+  --type=rpm
+</code></pre></div>
+
+<p>From the CLI, adding a Content View Filter rule:</p>
+
+<div class="highlight"><pre><code>hammer content-view filter rule create \
+  --organization="Default Organization" \
+  --content-view="New Content View" \
+  --content-view-filter="New Filter" \
+  --name="something-else" \
+  --max-version="10.0.0" \
+  --min-version="10.0.0"
+</code></pre></div>
+
+<h3 id="selecting-which-repositories-to-filter">Selecting which Repositories to Filter</h3>
+
+<p>By default a Filter applies to all repositories (present and future) in the Content View. It’s possible to select which repositories within the Content View apply to the filter.<br />
+This is useful, for example, if the desire is to exclude errata from only certain repositories in a view.</p>
+
+<p>To select which repositories to Filter in the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Content (within sub navigation) &gt; Filters &gt; Select the desired Filter &gt; Affected repositories (within sub navigation)</p>
+
+<p><img src="filter_repositories.png" alt="Select which repositories to Filter" /></p>
+
+<p>From the CLI, adding a Content View Filter:</p>
+
+<div class="highlight"><pre><code>hammer content-view filter update \
+  --organization="Default Organization" \
+  --name="New Filter" \
+  --repository-ids=2,3,7
+</code></pre></div>
+
+<h2 id="publishing-a-content-view">Publishing a Content View</h2>
+
+<p>Publishing a Content View produces a new version of the content view that is subsequently promoted to the Library lifecycle environment.<br />
+This newly published version of the content view is now available to any content host registered to Library.</p>
+
+<p>To publish a Content View, in the web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Publish New Version</p>
+
+<p><img src="publish_content_view1.png" alt="Publish Content View1" />
+<img src="publish_content_view2.png" alt="Publish Content View2" /></p>
+
+<p>From the CLI:</p>
+
+<div class="highlight"><pre><code>hammer content-view publish \
+  --organization="Default Organization" \
+  --name="New Content View"
+</code></pre></div>
+
+<h2 id="registering-a-content-host">Registering a Content Host</h2>
+
+<p>To register a Content Host that is not currently registered to the Content View, simply use subscription manager on the client Content Host and run:</p>
+
+<div class="highlight"><pre><code>subscription-manager register --org=ACME_Corporation --environment=Library/my_rhel_view
+
+</code></pre></div>
+
+<p>This would register the Content Host to the Library environment and the my_rhel_view Content View.</p>
+
+<p>If the Content Host is already registered, from the UI:</p>
+
+<p>Hosts &gt; Content Hosts &gt; Select the desired Content Host</p>
+
+<p><img src="system_content_view.png" alt="Select Content Host's content view" /></p>
+
+<p>From the CLI:</p>
+
+<div class="highlight"><pre><code>hammer content-host update \
+  --organization="Default Organization" \
+  --name="dhcp129-211.rdu.redhat.com" \
+  --content-view="New Content View" \
+  --lifecycle-environment="Library"
+</code></pre></div>
+
+<h2 id="promoting-a-content-view">Promoting a Content View</h2>
+
+<p>Initially a Content View is published to Library as version 1.  If there are Content Hosts in other environments that would like to consume this Content View, a version of the content view will need to be promoted to those environments.<br />
+For example, given the Content View “New Content View”, version 1 of which has been promoted to the Dev environment.  Any Content Hosts in Dev attached to the Content View would remain at version 1 until a version 2 is both published and promoted to the Dev environment.</p>
+
+<p>To promote a Content View in the Web UI, navigate to:</p>
+
+<p>Content &gt; Content Views &gt; Select the desired Content View &gt; Versions (within sub navigation) &gt; Click promote for desired version</p>
+
+<p><img src="promote_content_view1.png" alt="Promote a content view1" />
+<img src="promote_content_view2.png" alt="Promote a content view2" />
+<img src="promote_content_view3.png" alt="Promote a content view3" /></p>
+
+<p>To promote a Content View in the CLI:</p>
+
+<div class="highlight"><pre><code>hammer content-view version promote \
+  --organization="Default Organization" \
+  --content-view="New Content View" \
+  --to-lifecycle-environment="Test" \
+  --version 1
+</code></pre></div>
+
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Glossary</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Glossary</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="glossary">Glossary</h1>
+
+<p>The following terms are used throughout this document, and are important for the users understanding of Katello.</p>
+
+<dl>
+  <dt><strong>Activation Key</strong></dt>
+  <dd>A registration token which can be used in a kickstart file to control actions at registration.  These are similar to Activation Keys in Spacewalk, but they provide a subset of features because after registration, Puppet takes control of package and configuration management.</dd>
+  <dt><strong>Application Lifecycle Environment</strong></dt>
+  <dd>Steps in a promotion path through the Software (Development) Life Cycle (SDLC). Content (packages, puppet modules) can be moved through lifecycle environments via content view publishing/promotion. Traditionally these environments are things like Development -&gt; Test -&gt; Production. Channel cloning was used to implement this concept for this in Spacewalk.</dd>
+  <dt><strong>Attach</strong></dt>
+  <dd>Associating a Subscription to a Host which provides access to RPM content.</dd>
+  <dt><strong>Capsule</strong></dt>
+  <dd>An additional “server” that can be used in a Katello deployment to facilitate content federation and distribution in addition to other localized services (Puppet master, DHCP, DNS, TFTP, and more).</dd>
+  <dt><strong>Change Set</strong></dt>
+  <dd>Set of packages and puppet modules which are promoted between Application Lifecycle Environments. Katello records the progress of changesets as they promoted. Katello also provides audit capabilities to review how environments have changed over time.</dd>
+  <dt><strong>Compute Profile</strong></dt>
+  <dd>Default attributes for new virtual machines on a compute resource.</dd>
+  <dt><strong>Compute Resource</strong></dt>
+  <dd>A virtual fabric, or cloud infrastructure, where hosts can be deployed by Katello. Examples include RHEV-M, OpenStack, EC2, and VMWare.</dd>
+  <dt><strong>Content</strong></dt>
+  <dd>Software packages (RPMS), Package Groups, Errata, and Puppet modules. These are synced into the Library and then promoted into Lifecycle Environments via Content Views in order to be used/consumed by Hosts.</dd>
+  <dt><strong>Content Delivery Network (CDN)</strong></dt>
+  <dd>The mechanism to deliver Red Hat content in a geographically co-located fashion. For example, content which is synced by a Katello in Europe will pull content from a source in Europe.</dd>
+  <dt><strong>Content View</strong></dt>
+  <dd>A definition of content that combines products, packages, errata and Puppet modules, with capabilities for intelligent filtering and snapshotting. Content Views are a refinement of the combination of channels and cloning from Spacewalk.</dd>
+  <dt><strong>External Node Classifier</strong></dt>
+  <dd>A Puppet construct that provides additional data for a Puppet master to be used for configuring Hosts. Foreman acts as an External Node Classifier to Puppet Masters in a Satellite deployment.</dd>
+  <dt><strong>Facter</strong></dt>
+  <dd>A program that provides information (facts) about the system on which it is run (eg: total memory, operating system version, architecture, etc.) Facter facts can be used in Puppet modules in order to enable specific configurations based on Host data.</dd>
+  <dt><strong>Hammer</strong></dt>
+  <dd>The command line tool for Katello. Hammer can be used as a standard cli (and used in scripts) and can also be used as a shell in the same way that spacecmd, virsh and others work.</dd>
+  <dt><strong>Host</strong></dt>
+  <dd>A system, either physical or virtual, which is managed by Katello.</dd>
+  <dt><strong>Host Group</strong></dt>
+  <dd>A template for how a Host should be built. This includes the content view (which defines the available RPMs and Puppet modules), and the Puppet classes to apply (which determines the ultimate software and configuration).</dd>
+  <dt><strong>Location</strong></dt>
+  <dd>A collection of default settings which represent a physical place. These can be nested so that a user can set up defaults, for example, for Europe, which are refined by Tel Aviv, which are refined by DataCenter East, and then finally by Rack 22.</dd>
+  <dt><strong>Library</strong></dt>
+  <dd>The Library is the single origin of all content which can be used. If you are an Information Technology Infrastructure Library (ITIL) shop, it is your definitive media library.</dd>
+  <dt><strong>Manifest</strong></dt>
+  <dd>The means of transferring subscriptions from a Subscription Provider (such as the Red Hat Customer portal) to Katello. This is similar in function to certificates used with Spacewalk.</dd>
+  <dt><strong>Organization</strong></dt>
+  <dd>A tenant in Katello. Organizations, or orgs, are isolated collections of hosts, content and other functionality within a Katello deployment.</dd>
+  <dt><strong>Permission</strong></dt>
+  <dd>The ability to perform an action.</dd>
+  <dt><strong>Product</strong></dt>
+  <dd>A collection of content repositories.</dd>
+  <dt><strong>Promote</strong></dt>
+  <dd>The act of moving content from one Application Lifecycle Environment to another.</dd>
+  <dt><strong>Provisioning Template</strong></dt>
+  <dd>User defined templates for Kickstarts, snippets and other provisioning actions. These provide similar functionality to Kickstart Profiles and Snippets in Katello.</dd>
+  <dt><strong>Puppet Agent</strong></dt>
+  <dd>An agent that runs on a Host that applies configuration changes to that Host.</dd>
+  <dt><strong>Puppet Class</strong></dt>
+  <dd>A Puppet Class is re-usable named block of puppet manifest, similar to a class in an object-oriented programming language. Puppet classes must be included/instantiated in order to use their functionality. Puppet Classes can be parameterized - they can take parameters when they are included/instantiated and those parameters may be used by the underlying manifest to affect the ultimate configuration.</dd>
+  <dt><strong>Puppet Manifest</strong></dt>
+  <dd>A Manifest is a simple set of Puppet instructions. Manifests typically have the .pp extension. A manifest is much like a procedure in programming terms.</dd>
+  <dt><strong>Puppet Master</strong></dt>
+  <dd>A Capsule component that provides Puppet manifests to Hosts for execution by the Puppet Agent.</dd>
+  <dt><strong>Puppet Module</strong></dt>
+  <dd>A Puppet Module is a set of Puppet manifests/classes, template files, tests and other components packaged together in a specific directory format. Puppet Modules are typically associated with specific software (eg: NTP, Apache, etc) and contain various classes used to assist in the installation and configuration of that software. Puppet Labs maintains a repository of official and user-contributed modules called the Puppet Forge.</dd>
+  <dt><strong>Pulp Node</strong></dt>
+  <dd>A Capsule component that mirrors content. This is similar to the Spacewalk Proxy in Spacewalk. The main difference is that content can be pre-staged on the Pulp Node before it is used by a Host.</dd>
+  <dt><strong>Repository</strong></dt>
+  <dd>A collection of content (yum repository, puppet repository).</dd>
+  <dt><strong>Role</strong></dt>
+  <dd>A collection of permissions that are applied to a set of resources (such as Hosts).</dd>
+  <dt><strong>Smart Proxy</strong></dt>
+  <dd>A Capsule component that can integrate with external services, such as DNS or DHCP.</dd>
+  <dt><strong>Smart Variable</strong></dt>
+  <dd>A configuration value that controls how a Puppet Class behaves. This can be set on a Host, a Host Group, an Organization, or a Location.</dd>
+  <dt><strong>Standard Operating Environment (SOE)</strong></dt>
+  <dd>A controlled version of the operating system on which applications are deployed.</dd>
+  <dt><strong>Subscription</strong></dt>
+  <dd>The right to receive content and service from Red Hat. This is purchased by customers.</dd>
+  <dt><strong>Syncing</strong></dt>
+  <dd>Mirroring content from external resources into an organization’s Library.</dd>
+  <dt><strong>Sync Plans</strong></dt>
+  <dd>Scheduled execution of syncing content.</dd>
+  <dt><strong>Usergroup</strong></dt>
+  <dd>A collection of roles which can be assigned to a collection of users. This is similar to the Role in Spacewalk.</dd>
+  <dt><strong>User</strong></dt>
+  <dd>A human who works in Katello. Authentication and authorization can be done via built in logic, or using external LDAP or kerberos resources.</dd>
+</dl>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

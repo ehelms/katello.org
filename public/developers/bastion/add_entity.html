@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bastion: Add Entity</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Bastion: Add Entity</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="basics-of-adding-a-new-entity">Basics of Adding a New Entity</h1>
+
+<p>When adding functionality that introduces a new entity that maps to an external resource, there are a few common steps that a developer will need to take.</p>
+
+<p>First, create a folder in <code>app/assets/bastion</code> that is the plural version of the entity name (e.g. content-hosts). Follow by creating a file to hold the module definition and the resource.</p>
+
+<div class="highlight"><pre><code class="language-bash">mkdir app/assets/bastion/content-hosts
+touch app/assets/bastion/content-hosts/content-hosts.module.js
+touch app/assets/bastion/content-hosts/content-host.factory.js</code></pre></div>
+
+<h2 id="module">Module</h2>
+
+<p>The module defines a namespace that all functionality dedicated to this entity will be attached to. This makes testing and composing components together easier. For example, the content-hosts module definition might look like:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="cm">/**</span>
+<span class="cm">* @ngdoc module</span>
+<span class="cm">* @name  Bastion.content-hosts</span>
+<span class="cm">*</span>
+<span class="cm">* @description</span>
+<span class="cm">*   Module for content-hosts related functionality.</span>
+<span class="cm">*/</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;Bastion.content-hosts&#39;</span><span class="p">,</span> <span class="p">[</span>
+    <span class="s1">&#39;ngResource&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alchemy&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;alch-templates&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;ui.router&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Bastion.widgets&#39;</span>
+<span class="p">]);</span></code></pre></div>
+
+<p>The module definition defines the ‘Bastion.content-hosts’ namespace and tells Angular to make available the libraries <code>ngResource</code>, <code>alchemy</code>, <code>alch-templates</code>, <code>ui.router</code> and <code>Bastion.widgets</code>. These libraries are other similarly defined Angular modules.</p>
+
+<h2 id="routing">Routing</h2>
+
+<h3 id="client-side">Client Side</h3>
+
+<p>In order to display a Bastion page you must add a route for the page.  A route to view all content-hosts may look like this:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="nx">$stateProvider</span><span class="p">.</span><span class="nx">state</span><span class="p">(</span><span class="s1">&#39;content-hosts.index&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/content_hosts&#39;</span><span class="p">,</span>
+    <span class="nx">views</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;table&#39;</span><span class="o">:</span> <span class="p">{</span>
+	    <span class="nx">controller</span><span class="o">:</span> <span class="s1">&#39;ContentHostTableController&#39;</span><span class="p">,</span>
+	    <span class="nx">templateUrl</span><span class="o">:</span> <span class="s1">&#39;content-hosts/views/content-hosts-table-full.html&#39;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span></code></pre></div>
+
+<p>The views object contains a list of addressable views that allow the association of Angular controllers and templates with a URL.<br />
+See the UI router <a href="http://angular-ui.github.io/ui-router/site/#/api/ui.router">documentation</a> for more information.</p>
+
+<h3 id="server-side">Server Side</h3>
+
+<p>On the server side you need to add the entity name to the list of known pages in <a href="https://github.com/Katello/katello/tree/master/engines/bastion/config/routes.rb">engine.rb</a>.</p>
+
+<p>If the new entity is to be addressable at /new_entity, for example, then you should add new_entity to the <code>@pages</code> array.</p>
+
+<p>Note that you will need to restart rails after making this change.</p>
+
+<h2 id="resource">Resource</h2>
+
+<p>A resource serves as a representation of an API endpoint for an entity and provides functions to make RESTful calls. Files and factories that represent external resources should be represented by their singular model name, for example the resource for content-hosts is in <code>content-host.factory.js</code> and represented by:</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;Bastion.content-hosts&#39;</span><span class="p">).</span><span class="nx">factory</span><span class="p">(</span><span class="s1">&#39;content-host&#39;</span><span class="p">,</span>
+    <span class="p">[</span><span class="s1">&#39;$resource&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$resource</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="nx">$resource</span><span class="p">(</span><span class="s1">&#39;/api/v2/content-hosts/:id/:action&#39;</span><span class="p">,</span>
+	    <span class="p">{</span><span class="nx">id</span><span class="o">:</span> <span class="s1">&#39;@uuid&#39;</span><span class="p">},</span>
+	    <span class="p">{</span>
+		 <span class="nx">update</span><span class="o">:</span> <span class="p">{</span><span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;PUT&#39;</span><span class="p">},</span>
+		 <span class="nx">query</span><span class="o">:</span> <span class="p">{</span><span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">isArray</span><span class="o">:</span> <span class="kc">false</span><span class="p">},</span>
+		 <span class="nx">releaseVersions</span><span class="o">:</span> <span class="p">{</span><span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="nx">params</span><span class="o">:</span> <span class="p">{</span><span class="nx">action</span><span class="o">:</span> <span class="s1">&#39;releases&#39;</span><span class="p">}</span>
+	    <span class="p">}</span>
+	<span class="p">});</span>
+
+    <span class="p">}]</span>
+<span class="p">);</span></code></pre></div>
+
+<p>Here we have created an angular factory named <code>content-host</code> and attached it to the <code>Bastion.content-hosts</code> namespace. You can read more about the $resource service here - http://code.angularjs.org/1.0.7/docs/api/ngResource.$resource</p>
+
+<h2 id="asset-pipeline">Asset Pipeline</h2>
+
+<p>In order to get your newly created assets available to the web pages, we need to add them to the master manifest file. For our content-host example, open app/assets/bastion/bastion.js, add a reference to the module file and a line to load all files within our directory. We must include the module definition first so that all factories, controllers etc. that attach to the namespace have that namespace available.</p>
+
+<p>Open the file:</p>
+
+<div class="highlight"><pre><code class="language-bash">vim app/assets/bastion/bastion.js</code></pre></div>
+
+<p>Now add the following lines (with empty lines above and below for organizational purposes):</p>
+
+<div class="highlight"><pre><code class="language-javascript"><span class="c1">//= require &quot;bastion/content-hosts/content-hosts.module&quot;</span>
+<span class="c1">//= require_tree &quot;./content-hosts&quot;</span></code></pre></div>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

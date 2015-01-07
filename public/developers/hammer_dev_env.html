@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hammer Dev Environment</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Hammer Dev Environment</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="#">Developer Guide</a>
+
+      <ul class="sub-context-nav">
+        
+          
+        
+          
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+              <li class="nav-item">
+                <a href="/developers/github_workflow.html">Github Workflow</a>
+              </li>
+            
+          
+        
+          
+        
+          
+            
+              <li class="nav-item">
+                <a href="/developers/hammer_dev_env.html">Hammer Dev Environment</a>
+              </li>
+            
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+              <li class="nav-item">
+                <a href="/developers/pull_request_checklist.html">Pull Request Checklist</a>
+              </li>
+            
+          
+        
+          
+        
+          
+            
+          
+        
+          
+            
+              <li class="nav-item">
+                <a href="/developers/testing.html">Testing</a>
+              </li>
+            
+          
+        
+          
+            
+              <li class="nav-item">
+                <a href="/developers/upgrade_pulp.html">Upgrading Pulp</a>
+              </li>
+            
+          
+        
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">Style Guides</a>
+
+    <ul class="sub-context-nav">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/developers/style/git_commit_messages.html">Style Guide: Commit Messages</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/developers/style/javascript.html">Style Guide: Javascript</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/developers/style/ruby.html">Style Guide: Ruby</a>
+          </li>
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="/docs/developer_guide/bastion">Bastion</a>
+
+    <ul class="sub-context-nav">
+      
+        
+      
+        
+          
+            <li class="nav-item">
+              <a href="/developers/bastion/add_custom_module.html">Bastion: Adding a Custom Module</a>
+            </li>
+          
+        
+      
+        
+          
+            <li class="nav-item">
+              <a href="/developers/bastion/add_entity.html">Bastion: Add Entity</a>
+            </li>
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li class="nav-item">
+              <a href="/developers/bastion/dependencies.html">Bastion: Dependencies</a>
+            </li>
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+            <li class="nav-item">
+              <a href="/developers/bastion/i18n.html">Bastion: i18n</a>
+            </li>
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="katello-hammer-cli-development-setup">Katello Hammer CLI Development Setup</h1>
+
+<p>This will allow you to run hammer-cli-foreman and hammer-cli-katello from git for development.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The development environment requires the following tools to be present before setup:</p>
+
+<ul>
+  <li>git</li>
+  <li>ruby and/or RVM</li>
+  <li>a running <a href="https://github.com/Katello/katello-installer#development-usage">katello server</a> (local or otherwise)</li>
+</ul>
+
+<h2 id="clone-the-git-repositories">Clone the git repositories</h2>
+
+<div class="highlight"><pre><code>git clone https://github.com/theforeman/hammer-cli-foreman.git
+git clone https://github.com/Katello/hammer-cli-katello.git
+</code></pre></div>
+
+<h2 id="setup-of-rvm-environment">Setup of RVM environment</h2>
+
+<p><strong>note: you can skip this step if you aren’t using RVM</strong></p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nb">pushd </span>hammer-cli-Katello
+<span class="nb">echo</span> <span class="s2">&quot;1.9.3&quot;</span> &gt; .ruby-version
+<span class="nb">echo</span> <span class="s2">&quot;hammer&quot;</span> &gt; .ruby-gemset
+<span class="nb">cd</span> . <span class="c"># to have RVM load the correct ruby version and gemset</span></code></pre></div>
+
+<h2 id="point-to-local-gems-and-bundle">Point to local gems and bundle</h2>
+
+<p>Tell bundler to look for hammer-cli-foreman locally:</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="nb">echo</span> <span class="s2">&quot;gem &#39;hammer_cli_foreman&#39;, :path =&gt; &#39;../hammer-cli-foreman&#39;&quot;</span> &gt; Gemfile.local</code></pre></div>
+<p>then run <code>bundle install</code>.</p>
+
+<h2 id="hammer-configuration">Hammer configuration</h2>
+
+<p>Now it’s time to create config files for Hammer and its loaded plugins.</p>
+
+<div class="highlight"><pre><code class="language-bash"><span class="c"># create the directory structure</span>
+mkdir -p ~/.hammer/cli.modules.d
+
+<span class="c"># base hammer config</span>
+cat <span class="s">&lt;&lt;-EOF &gt; ~/.hammer/cli_config.yml</span>
+<span class="s">:ui:</span>
+<span class="s">  :interactive: true</span>
+<span class="s">  :per_page: 20</span>
+<span class="s">  :history_file: &#39;~/.hammer/history&#39;</span>
+
+<span class="s">:watch_plain: false</span>
+
+<span class="s">:log_dir: &#39;~/.hammer/log&#39;</span>
+<span class="s">:log_level: &#39;error&#39;</span>
+<span class="s">:log_api_calls: false</span>
+<span class="s">EOF</span>
+
+<span class="c"># hammer-cli-foreman</span>
+cat <span class="s">&lt;&lt;-EOF &gt; ~/.hammer/cli.modules.d/foreman.yml</span>
+<span class="s">:foreman:</span>
+<span class="s">  :enable_module: true</span>
+<span class="s">  :host: http://you_hostname_here</span>
+<span class="s">  :username: admin</span>
+<span class="s">  :password: changeme</span>
+<span class="s">EOF</span>
+
+<span class="c"># hammer-cli-katello</span>
+cat <span class="s">&lt;&lt;-EOF &gt; ~/.hammer/cli.modules.d/katello.yml</span>
+<span class="s">:katello:</span>
+<span class="s">  :enable_module: true</span>
+<span class="s">EOF</span></code></pre></div>
+
+<h2 id="try-it-out">Try it out!</h2>
+
+<div class="highlight"><pre><code>$ hammer --help
+Usage:
+    hammer [OPTIONS] SUBCOMMAND [ARG] ...
+
+Parameters:
+    SUBCOMMAND                    subcommand
+    [ARG] ...                     subcommand arguments
+
+Subcommands:
+    ...
+    ...
+
+Options:
+    --autocomplete LINE           Get list of possible endings
+    --csv                         Output as CSV (same as --output=csv)
+    --csv-separator SEPARATOR     Character to separate the values
+    --interactive INTERACTIVE     Explicitly turn interactive mode on/off
+                                  One of true/false, yes/no, 1/0.
+    --output ADAPTER              Set output format. One of [base, table, silent, csv]
+    --show-ids                    Show ids of associated resources
+    --version                     show version
+    -c, --config CFG_FILE         path to custom config file
+    -h, --help                    print help
+    -p, --password PASSWORD       password to access the remote system
+    -u, --username USERNAME       username to access the remote system
+    -v, --verbose                 be verbose
+</code></pre></div>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

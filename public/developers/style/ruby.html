@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Style Guide: Ruby</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="navbar-header">
+    <a class="logo" href="/">
+      <img src="/assets/images/default-logo.png" alt="Katello"/>
+      <span>Katello</span>
+    </a>
+  </div>
+  <div class="container">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Documentation<i class="caret"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="/docs">Nightly</a></li>
+          <li><a href="/docs/2.0">2.0</a></li><li><a href="/docs/2.1">2.1</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/developers">Developers</a>
+      </li>
+      <li>
+        <a href="/community/index.html">Community</a>
+      </li>
+      <li>
+        <a href="/troubleshooting/index.html">Troubleshooting</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="content">
+  <h2 class="page-title">
+    <div class="container">Style Guide: Ruby</div>
+  </h2>
+
+
+  <section class="container has-sidebar">
+    <nav class="context-nav">
+
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//installation/index.html">Installation</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//release_notes/release_notes.html">Release Notes</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//api/index.html">API</a>
+    </li>
+  </ul>
+  <ul>
+    <li class="nav-item">
+      <a href="/docs//cli/index.html">CLI</a>
+    </li>
+  </ul>
+
+  <ul>
+  <li class="nav-item">
+    <a href="#">User Guide</a>
+
+    <ul class="sub-context-nav">
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/activation_keys/index.html">Activation Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/capsules/index.html">Capsules</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content/content.html">Content</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_hosts/index.html">Content Hosts</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_search/index.html">Content Search</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/content_views/content_views.html">Content Views</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/disconnected/index.html">Disconnected</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/glossary.html">Glossary</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/gpg_keys/index.html">GPG Keys</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/host_collections/index.html">Host Collections</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/lifecycle_environments/environment.html">Lifecycle Environments</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/provisioning/index.html">Provisioning</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/puppet_integration/index.html">Puppet Integration</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+            <a href="/docs//user_guide/red_hat_content/content.html">Red Hat Content</a>
+          </li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </ul>
+
+  </li>
+</ul>
+
+
+</nav>
+
+
+
+    <div class="section">
+      
+        <h1 id="ruby-code-conventions">Ruby Code Conventions</h1>
+
+<ul>
+  <li>When indenting always use two spaces. Never use a tab character.</li>
+  <li>Always run ‘‘ruby -w’’ to see all ruby parses warnings and recommendations.</li>
+  <li>Naming conventions:
+    <ul>
+      <li>classes and modules: <code>CamelCase</code></li>
+      <li>methods and variables: <code>snake_case</code></li>
+      <li>constants: <code>UPPER_SNAKE_CASE</code></li>
+    </ul>
+  </li>
+  <li>Use <code>{ }</code> for single-line blocks, <code>do end</code> for multi-lines blocks e.g.:</li>
+</ul>
+
+<div class="highlight"><pre><code class="language-ruby"><span class="n">names</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span> <span class="nb">puts</span> <span class="nb">name</span><span class="o">.</span><span class="n">upcase</span> <span class="p">}</span>
+
+<span class="n">names</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">name</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">&quot;Hello </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">&quot;</span>
+  <span class="nb">puts</span> <span class="s2">&quot;How are you?&quot;</span>
+<span class="k">end</span></code></pre></div>
+
+<ul>
+  <li>In regard to using parentheses with methods:
+    <ul>
+      <li>We recommend against using parentheses for methods and method definitions<br />
+without arguments.</li>
+      <li>We highly recommend using parentheses for all other methods and method<br />
+definitions. The only exception is when it’s used as DSL.</li>
+    </ul>
+  </li>
+</ul>
+
+<div class="highlight"><pre><code class="language-ruby"><span class="k">def</span> <span class="nf">name</span>                  <span class="c1"># good</span>
+<span class="k">def</span> <span class="nf">name</span><span class="p">()</span>                <span class="c1"># bad</span>
+<span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>      <span class="c1"># good</span>
+<span class="k">def</span> <span class="nf">open</span> <span class="n">file</span><span class="p">,</span> <span class="n">mode</span>       <span class="c1"># bad</span>
+<span class="nb">name</span>                      <span class="c1"># good</span>
+<span class="nb">name</span><span class="p">()</span>                    <span class="c1"># bad</span>
+<span class="nb">open</span><span class="p">(</span><span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>     <span class="c1"># good</span>
+<span class="nb">open</span> <span class="s2">&quot;file.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span>      <span class="c1"># bad</span>
+<span class="nb">name</span><span class="o">.</span><span class="n">is_a?</span> <span class="nb">String</span>         <span class="c1"># acceptable, we consider that a DSL for type checking</span>
+<span class="n">render</span> <span class="ss">:index</span>             <span class="c1"># acceptable, Rails DSL</span></code></pre></div>
+
+<ul>
+  <li>Avoid class variables (@@variable) wherever possible. Instead, try to use a<br />
+instance variable (@variable) or at least a thread-safe variable<br />
+(Thread.current[:variable]).</li>
+</ul>
+
+<h3 id="more-info">More info</h3>
+
+<p>We also recommend most of the conventions in the community driven Ruby and Rails style guides:</p>
+
+<ul>
+  <li>https://github.com/bbatsov/ruby-style-guide</li>
+  <li>https://github.com/bbatsov/rails-style-guide</li>
+</ul>
+
+<h2 id="checking-your-code">Checking your code</h2>
+
+<p>To enforce the styles from the style guide and also to check for warnings/error, we use rubocop. The<br />
+gem is available as part of the development group in katello.gemspec. To run rubocop, simply execute<br />
+this from you foreman directory:</p>
+
+<div class="highlight"><pre><code>rake katello:rubocop
+</code></pre></div>
+
+<p>Also, rubocop <a href="https://github.com/bbatsov/rubocop#editor-integration">integrates with some IDES</a>.</p>
+
+      
+    </div>
+  </section>
+
+</div>
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>

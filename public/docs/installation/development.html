@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Development Installation</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/assets/css/syntax.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/patternfly.css">
+    <link rel="stylesheet" href="/assets/css/theme.css">
+  </head>
+
+  <body>
+    <h1 id="development-installation">Development Installation</h1>
+
+<p>Katello provides a puppet based installer for deploying development environments. Development deployments are supported on the following OSes:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>OS</th>
+      <th>Development</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CentOS 6</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>RHEL 6</td>
+      <td>X</td>
+    </tr>
+    <tr>
+      <td>Fedora 19</td>
+      <td>X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are two methods to install a development setup: direct or <a href="#katello-deploy">katello-deploy</a>.</p>
+
+<h3 id="direct-install">Direct Install</h3>
+
+<p>A development environment may be setup through the <code>katello-devel-installer</code> if you have already deployed a system with one of the supported OSes. Begin by installing the RPM or cloning the <code>katello-installer</code>:</p>
+
+<p><strong>RPM (example using RHEL6)</strong>
+<code>
+yum -y localinstall http://fedorapeople.org/groups/katello/releases/yum/nightly/el6/x86_64/katello-repos-latest.rpm
+yum install katello-installer
+</code></p>
+
+<p><strong>Git Repo</strong>
+<code>
+git clone https://github.com/Katello/katello-installer.git
+cd katello-installer
+</code> </p>
+
+<p>The development installer has a variety of options that may be set prior to running the installation. <br />
+For example, if you have already created a user on the system or have a preferred user name and password these can be configured. <br />
+Options can be configured via the answer file or through command line options when running the installer.</p>
+
+<p><strong>RPM</strong>
+<code>
+vim /etc/katello-installer/answers.katello-devel-installer.yaml
+katello-devel-installer --help
+katello-devel-installer &lt;options&gt;
+</code></p>
+
+<p><strong>Git</strong>
+<code>
+vim config/answers.katello-devel-installer.yaml
+./bin/katello-devel-installer --help
+./bin/katello-devel-installer &lt;options&gt;
+</code></p>
+
+<h2 id="katello-deploy">Katello Deploy</h2>
+
+<p>Katello provides a git repository designed to streamline setup by setting up all the proper repositories.<br />
+Katello deploy provides the ability to deploy a virtual machine instance via Vagrant or direct deployment on an already provisioned machine.<br />
+For details on how to install using katello-deploy, please see the <a href="https://github.com/Katello/katello-deploy/blob/master/README.md">README</a>.</p>
+
+
+
+    <footer class="footer">
+    <p>This web site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_GB">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.  Source available: <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/katello/katello.org" rel="dct:source">github.com/katello/katello.org</a>.</p>
+</footer>
+
+
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
